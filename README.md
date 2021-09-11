@@ -16,7 +16,7 @@ Run
 ---
 
 ```bash
-docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka
+docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 kasique/kafka-zookeeper
 ```
 
 ```bash
@@ -32,7 +32,7 @@ kafka-console-consumer.sh --zookeeper $ZOOKEEPER --topic test
 Running the proxy
 -----------------
 
-Take the same parameters as the spotify/kafka image with some new ones:
+Take the same parameters as the kasique/kafka-zookeeper image with some new ones:
  * `CONSUMER_THREADS` - the number of threads to consume the source kafka 7 with
  * `TOPICS` - whitelist of topics to mirror
  * `ZK_CONNECT` - the zookeeper connect string of the source kafka 7
